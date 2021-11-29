@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InV1c2kyIiwiaWQiOiI2MWE0Y2QxZWEyYzJiOTY4OTczODYyNzgiLCJpYXQiOjE2MzgyMDUzNDF9.NSpLtKxugYfrsioqKeYklMRhkJBOPZRLLMO5IEtstmc
+
+{
+    "title": "uusi7",
+    "author": "Pena",
+    "url": "www.Peeesports.com",
+    "likes": "2"
+}
