@@ -40,6 +40,22 @@ blogsRouter.post('/', middleware.userExtractor, async (request, response, next) 
   }
 })
 
+blogsRouter.post('/:id/comments', async (request, response, next) => {
+  try {
+    const blog = await Blog.findById(request.params.id)
+    const body = request.body
+    console.log(body)
+    blog.comments = blog.comments.concat(body.comment)
+    console.log(blog)
+
+    const savedBlog = await blog.save()
+
+    response.status(201).json(savedBlog)
+  } catch(exception) {
+    next(exception)
+  }
+})
+
 blogsRouter.delete('/:id', middleware.userExtractor, async (request, response, next) => {
   // const id = Number(request.params.id)
   try {
